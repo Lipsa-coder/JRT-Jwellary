@@ -1,0 +1,232 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #f9f9f9;
+}
+header {
+    background: #d4af37;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-left a, .header-left p, .header-right select, .header-right a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.header-left #calendar {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background: white;
+    color: black;
+    padding: 10px;
+    border: 1px solid #ccc;
+    top: 30px;
+    left: 20px;
+}
+
+#auspicious-day:hover + #calendar {
+    display: block;
+}
+
+.header-right select, .header-right a {
+    background: none;
+    border: none;
+    font-size: 14px;
+}
+
+.icon {
+    font-size: 16px;
+    margin-right: 5px;
+}
+.logo-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    height: 80px;
+}
+
+.logo img {
+    width: 100px; 
+    height: 80px;
+}
+
+.search-bar {
+    flex-grow: 1;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 14px;
+}
+
+.search-bar button {
+    padding: 8px 16px;
+    background: #d4af37;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background: #b8860b;
+}
+
+.purchase-plan-btn {
+    padding: 8px 16px;
+    background: #ffd700;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.purchase-plan-btn:hover {
+    background: #b8860b;
+    color: white;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px;
+    background-color: #333;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #d4af37;
+}
+
+.category-section {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.filters select {
+    margin: 5px;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.filters button {
+    padding: 8px 16px;
+    background: #ffd700;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.filters button:hover {
+    background: #b8860b;
+}
+.new-arrivals {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align:left;
+}
+
+.new-arrivals button {
+    padding: 8px 16px;
+    background: #ffd700;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.new-arrivals button:hover {
+    background: #b8860b;
+}
+
+.main-jewellery {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    justify-content: space-between;
+}
+
+.jewellery-item {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    background: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.jewellery-item img {
+    width: 100%;
+    height: 200px;
+    cursor: pointer;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.jewellery-item img:hover {
+    transform: scale(1.1);
+}
+
+.jewellery-item h3, .jewellery-item p {
+    margin: 10px 0;
+}
+
+.buy-now {
+    padding: 8px 16px;
+    background: #d4af37;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.buy-now:hover {
+    background: #b8860b;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: white;
+    font-size: 14px;
+}

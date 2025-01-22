@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRT Jewellery</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-left">
+            <a href="#" id="auspicious-day">Auspicious Day</a>
+            <div id="calendar"></div>
+            <p id="gold-rate">Gold Rate: ₹5600/gm</p>
+            <p id="contact">
+                <span class="icon">Call</span> 1800-123-456
+            </p>
+        </div>
+        <div class="header-right">
+            <select id="currency">
+                <option value="INR">INR</option>
+                <option value="USD">USD</option>
+                <option value="GBP">GBP</option>
+                <option value="EUR">EUR</option>
+            </select>
+            <div class="location">
+                <span class="icon">Loc</span>
+                <select id="store-location">
+                    <option value="chennai">Chennai</option>
+                    <option value="bangalore">Bangalore</option>
+                    <option value="mumbai">Mumbai</option>
+                </select>
+            </div>
+            <a href="#" class="icon">Wishlist</a>
+            <a href="#" class="icon">Cart</a>
+            <a href="#" class="icon">Profile</a>
+        </div>
+    </header>
+    <section class="logo-section">
+        <div class="logo">
+            <img src="images/grt-logo.png" alt="GRT Jewellery Logo">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for jewellery..." id="search-bar">
+            <button type="button" id="search-button">Search</button>
+        </div>
+        <button class="purchase-plan-btn">Purchase Plan Payment</button>
+    </section>
+    <nav>
+        <ul>
+            <li><a href="#">All Jewellery</a></li>
+            <li><a href="#">Gold</a></li>
+            <li><a href="#">Diamond</a></li>
+            <li><a href="#">Silver</a></li>
+            <li><a href="#">Solitaire</a></li>
+            <li><a href="#">Valentine</a></li>
+            <li><a href="#">Oriana</a></li>
+            <li><a href="#">Gifts & Gold Coins</a></li>
+            <li><a href="#">GRT Live</a></li>
+            <li><a href="#">More</a></li>
+        </ul>
+    </nav>
+    <section class="category-section">
+        <h2>Filter Jewellery</h2>
+        <div class="filters">
+            <select>
+                <option>Price</option>
+                <option>Low to High</option>
+                <option>High to Low</option>
+            </select>
+            <select>
+                <option>Metal</option>
+                <option>Gold</option>
+                <option>Silver</option>
+                <option>Platinum</option>
+            </select>
+            <select>
+                <option>Purity</option>
+                <option>22k</option>
+                <option>24k</option>
+            </select>
+            <select>
+                <option>Weight</option>
+                <option>Less than 10g</option>
+                <option>10g to 50g</option>
+            </select>
+            <button>See More Filters</button>
+        </div>
+    </section>
+    <section class="new-arrivals">
+        <h2>New Arrivals</h2>
+        <button>View All New Arrivals</button>
+    </section>
+    <section class="main-jewellery">
+        <div class="jewellery-item" id="item1">
+            <img src="images/ring.jpg" alt="Ring" class="product-image">
+            <h3>Exquisite Ring</h3>
+            <p>Product Code: 001</p>
+            <p>Price: ₹12,000</p>
+            <button class="buy-now" onclick="addToCart('Exquisite Ring', '001', '₹12,000')">Buy Now</button>
+        </div>
+        <div class="jewellery-item" id="item2">
+            <img src="images/necklace.jpg" alt="Necklace" class="product-image">
+            <h3>Elegant Necklace</h3>
+            <p>Product Code: 002</p>
+            <p>Price: ₹20,000</p>
+            <button class="buy-now" onclick="addToCart('Elegant Necklace', '002', '₹20,000')">Buy Now</button>
+        </div>
+        <div class="jewellery-item" id="item3">
+            <img src="images/bracelet.jpg" alt="Bracelet" class="product-image">
+            <h3>Stylish Bracelet</h3>
+            <p>Product Code: 003</p>
+            <p>Price: ₹15,000</p>
+            <button class="buy-now" onclick="addToCart('Stylish Bracelet', '003', '₹15,000')">Buy Now</button>
+        </div>
+        <div class="jewellery-item" id="item4">
+            <img src="images/earrings.jpg" alt="Earrings" class="product-image">
+            <h3>Charming Earrings</h3>
+            <p>Product Code: 004</p>
+            <p>Price: ₹8,000</p>
+            <button class="buy-now" onclick="addToCart('Charming Earrings', '004', '₹8,000')">Buy Now</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 GRT Jewellery. All rights reserved.</p>
+    </footer>
+
+  
+    <script>
+        let cart = [];
+        function addToCart(name, code, price) {
+            const product = { name, code, price };
+            cart.push(product);
+            alert(`${name} added to your cart`);
+        }
+
+        document.getElementById("search-button").addEventListener("click", function() {
+            const query = document.getElementById("search-bar").value;
+            alert("You searched for: " + query);
+        });
+        const jewelleryItems = document.querySelectorAll('.jewellery-item');
+        jewelleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const itemName = item.querySelector('h3').textContent;
+                const itemCode = item.querySelector('p').textContent.split(': ')[1];
+                window.location.href = `/product-details.html?name=${itemName}&code=${itemCode}`;
+            });
+        });
+    </script>
+
+</body>
+</html>
